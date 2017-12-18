@@ -26,6 +26,13 @@ class App extends React.Component{
 			},
 		}
 
+		//this bind
+		this.copyLink = this.copyLink.bind(this)
+	}
+
+	componentDidMount(){
+		socket.emit('getState')
+
 		//Listening
 		socket.on('waiting', props => {
 			var href = window.location.href.split('invite')[0] + props.link
@@ -56,14 +63,6 @@ class App extends React.Component{
 				}
 			})
 		})
-
-		//this bind
-		this.copyLink = this.copyLink.bind(this)
-	}
-
-
-	componentDidMount(){
-		socket.emit('getState')
 	}
 
 	copyLink(e){

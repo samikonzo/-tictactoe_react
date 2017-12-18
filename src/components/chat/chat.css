@@ -53,10 +53,49 @@
 	font-size: 24px;
 }
 .chat-form__submitBtn{
+	outline: none;
+	border-left: 1px solid grey;
+	border-top: 1px solid grey;
+	border:1px solid grey;
+	background: white;
 	width:20%;
 	height: 40px;
 	box-sizing: border-box;
 	position: absolute;
 	bottom: 0;
 	right: 0;
+}
+
+
+.message{
+	padding: 2px;
+	text-align: right;
+}
+.message--fromMe{
+	text-align: left;
+}
+
+.message__userName{
+	display: inline-block;
+	padding: 5px;
+	text-align: center;
+	float: right;
+}
+
+.message--fromMe .message__userName{
+	float: left;
+}
+
+.message__message-body{
+	display: inline-block;
+	border: 1px solid transparent;
+	border-radius: 5px;
+	padding: 5px;
+	background: #ea8168;
+	text-align: right;
+}
+
+.message--fromMe .message__message-body{
+	background: #82b21e;
+	text-align: left;
 }

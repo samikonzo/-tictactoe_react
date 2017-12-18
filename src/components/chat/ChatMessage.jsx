@@ -11,10 +11,8 @@ class ChatMessages extends React.Component{
 			<div className={`message ${fromMe}`}>
 				<div className="message__userName">
 					{
-					/* this.props.username */
 						messageFrom
 					}
-
 				</div>
 				<div className="message__message-body">
 					{ this.props.message }

@@ -18765,46 +18765,48 @@ var App = function (_React$Component) {
 				draw: null
 			}
 
-			//Listening
-		};socket.on('waiting', function (props) {
-			var href = window.location.href.split('invite')[0] + props.link;
-
-			_this.setState(function (prevState) {
-				return {
-					visibility: {
-						mask: true,
-						game: false,
-						chat: false,
-						infobar: false
-					},
-
-					gameLink: href
-				};
-			});
-		});
-
-		socket.on('start', function (props) {
-			_this.setState(function (prevState) {
-				return {
-					visibility: {
-						mask: false,
-						game: true,
-						chat: true,
-						infobar: true
-					}
-				};
-			});
-		});
-
-		//this bind
-		_this.copyLink = _this.copyLink.bind(_this);
+			//this bind
+		};_this.copyLink = _this.copyLink.bind(_this);
 		return _this;
 	}
 
 	_createClass(App, [{
 		key: 'componentDidMount',
 		value: function componentDidMount() {
+			var _this2 = this;
+
 			socket.emit('getState');
+
+			//Listening
+			socket.on('waiting', function (props) {
+				var href = window.location.href.split('invite')[0] + props.link;
+
+				_this2.setState(function (prevState) {
+					return {
+						visibility: {
+							mask: true,
+							game: false,
+							chat: false,
+							infobar: false
+						},
+
+						gameLink: href
+					};
+				});
+			});
+
+			socket.on('start', function (props) {
+				_this2.setState(function (prevState) {
+					return {
+						visibility: {
+							mask: false,
+							game: true,
+							chat: true,
+							infobar: true
+						}
+					};
+				});
+			});
 		}
 	}, {
 		key: 'copyLink',
@@ -18849,7 +18851,7 @@ var App = function (_React$Component) {
 	}, {
 		key: 'render',
 		value: function render() {
-			var _this2 = this;
+			var _this3 = this;
 
 			var visibility = this.state.visibility;
 
@@ -18864,7 +18866,7 @@ var App = function (_React$Component) {
 				React.createElement(
 					'div',
 					{ className: 'mask ' + maskVisibility, onClick: this.copyLink, ref: function ref(mask) {
-							return _this2.mask = mask;
+							return _this3.mask = mask;
 						} },
 					React.createElement(
 						'p',
@@ -18874,7 +18876,7 @@ var App = function (_React$Component) {
 					React.createElement(
 						'p',
 						{ ref: function ref(link) {
-								return _this2.maskLink = link;
+								return _this3.maskLink = link;
 							} },
 						this.state.gameLink
 					),
@@ -18936,7 +18938,7 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, "html, body{\r\n\tmargin: 0;\r\n\tpadding: 0;\r\n\twidth:100%;\r\n\theight: 100%;\r\n}\r\n\r\n#app{\r\n\twidth: 100%;\r\n\theight: 100%;\r\n\tposition: relative;\r\n}\r\n\r\n.wrapper{\r\n\twidth: 100%;\r\n\theight: 100%;\r\n\tposition: relative;\r\n\r\n\tdisplay: flex;\r\n\tflex-flow: row-reverse wrap;\r\n\tjustify-content: center;\r\n\t-ms-align-items: center;\r\n\talign-items: center;\r\n\talign-content: center; \r\n}\r\n\r\n\r\n.mask{\r\n\tposition: absolute;\r\n\tz-index: 2;\r\n\ttop: 0;\r\n\twidth: 100%;\r\n\theight: 100%;\r\n\tmax-height: 100%;\r\n\topacity: 1;\r\n\tbackground: white;\r\n\tborder:1px solid;\r\n\tbox-sizing: border-box;\r\n\ttransition: 2s;\r\n\tuser-select: none;\r\n\r\n\tdisplay: flex;\r\n\tflex-flow: column wrap;\r\n\tjustify-content: center;\r\n\t-ms-align-items: center;\r\n\talign-items: center;\r\n\talign-content: center;\r\n}\r\n\r\n.mask--hidden{\r\n\ttop: -100%;\r\n}\r\n\r\n", ""]);
+exports.push([module.i, "html, body{\r\n\tmargin: 0;\r\n\tpadding: 0;\r\n\twidth:100%;\r\n\theight: 100%;\r\n}\r\n\r\n#app{\r\n\twidth: 100%;\r\n\theight: 100%;\r\n\tposition: relative;\r\n}\r\n\r\n.wrapper{\r\n\twidth: 100%;\r\n\theight: 100%;\r\n\tposition: relative;\r\n\r\n\tdisplay: flex;\r\n\tflex-flow: row-reverse wrap;\r\n\tjustify-content: center;\r\n\t-ms-align-items: center;\r\n\talign-items: center;\r\n\talign-content: center; \r\n\r\n\tpadding: 10px;\r\n}\r\n\r\n\r\n.mask{\r\n\tposition: absolute;\r\n\tz-index: 2;\r\n\ttop: 0;\r\n\twidth: 100%;\r\n\theight: 100%;\r\n\tmax-height: 100%;\r\n\topacity: 1;\r\n\tbackground: white;\r\n\tborder:1px solid;\r\n\tbox-sizing: border-box;\r\n\ttransition: 2s;\r\n\tuser-select: none;\r\n\r\n\tdisplay: flex;\r\n\tflex-flow: column wrap;\r\n\tjustify-content: center;\r\n\t-ms-align-items: center;\r\n\talign-items: center;\r\n\talign-content: center;\r\n}\r\n\r\n.mask--hidden{\r\n\ttop: -100%;\r\n}\r\n\r\n\r\n.infobar{\r\n\twidth:300px;\r\n\tposition: relative;\r\n\tmargin: 10px 0px;\r\n\topacity: 0;\r\n\ttransition: 1s;\r\n\ttext-align: center;\r\n\tborder-collapse: collapse;\r\n}\r\n.infobar--visible{\r\n\topacity: 1;\r\n}\r\n\r\n.infobar tr:first-child{\r\n\tborder-bottom: 1px solid lightgrey;\r\n}\r\n\r\n.infobar td{\r\n\twidth:100px;\r\n\theight: 20px;\r\n\ttext-align: center;\r\n}\r\n\r\n.infobar-wins__X{}\r\n\r\n.infobar-wins__draw{}\r\n\r\n.infobar-wins__0{}\r\n", ""]);
 
 // exports
 
@@ -19181,19 +19183,28 @@ var Game = function (_React$Component) {
 		value: function endGame(props) {
 			var _this2 = this;
 
-			this.showWinCombination(props.winArr);
+			var popupStatus;
+			if (props.state == 'draw') popupStatus = 'draw';else popupStatus = props.winSign == this.state.playerSign ? 'win' : 'fail';
 
-			setTimeout(function () {
-				_this2.setState(function (prevState) {
-					var popupStatus;
-					if (props.state == 'draw') popupStatus = 'draw';else popupStatus = props.winSign == prevState.playerSign ? 'win' : 'fail';
-
+			if (popupStatus == 'draw') {
+				this.setState(function (prevState) {
 					return {
 						popup: true,
 						popupStatus: popupStatus
 					};
 				});
-			}, 1000);
+			} else {
+				this.showWinCombination(props.winArr);
+
+				setTimeout(function () {
+					_this2.setState(function (prevState) {
+						return {
+							popup: true,
+							popupStatus: popupStatus
+						};
+					});
+				}, 1000);
+			}
 		}
 	}, {
 		key: 'showWinCombination',
@@ -19225,49 +19236,33 @@ var Game = function (_React$Component) {
 	}, {
 		key: 'restartGame',
 		value: function restartGame(props) {
-			var _this4 = this;
-
-			// you will turn first or not
-			// disable playground for 1s for clear tds
-			// hide popup
-			// enable playground if need
-
-
+			//
 			var turn = props.turn;
-			var willBeEnableAfterClear = turn;
 			this.setState(function (prevState) {
 				return {
-					enable: false,
+					enable: turn,
 					playerTurn: turn,
 					popup: false
 				};
 			});
 
-			// and enale playground if was enabled
-			if (willBeEnableAfterClear) {
-				setTimeout(function () {
-					_this4.setState({
-						enable: true
-					});
-				}, 1000);
-			}
-
 			// clear tds
 			[].forEach.call(this.playground.querySelectorAll('td'), function (td) {
 				delete td.buzy;
 				td.classList.add('playground__cell--empty');
-				setTimeout(function () {
-					td.innerHTML = '';
-				}, 1000);
+				td.innerHTML = '';
 			});
 		}
 	}, {
 		key: 'render',
 		value: function render() {
-			var _this5 = this;
+			var _this4 = this;
 
 			var gameVisibility = this.state.visible ? 'game--visible' : 'game--hidden';
 			var playgroundEnable = this.state.enable ? '' : 'playground--disable';
+			var currentTurn = this.state.playerTurn ? 'your turn' : 'enemy turn';
+			var turnClass = this.state.playerTurn ? 'game-params__turn--my' : 'game-params__turn--enemy';
+			var paramsHidden = this.state.popup ? 'game-params--hidden' : '';
 
 			return React.createElement(
 				'div',
@@ -19276,7 +19271,7 @@ var Game = function (_React$Component) {
 				React.createElement(
 					'table',
 					{ className: 'playground ' + playgroundEnable, onClick: this.clickHandler, ref: function ref(playground) {
-							return _this5.playground = playground;
+							return _this4.playground = playground;
 						} },
 					React.createElement(
 						'tbody',
@@ -19302,6 +19297,21 @@ var Game = function (_React$Component) {
 							React.createElement('td', { className: 'playground__cell playground__cell--empty' }),
 							React.createElement('td', { className: 'playground__cell playground__cell--empty' })
 						)
+					)
+				),
+				React.createElement(
+					'p',
+					{ className: 'game-params ' + paramsHidden },
+					'You play : ',
+					React.createElement(
+						'span',
+						{ className: 'game-params__sign' },
+						this.state.playerSign
+					),
+					React.createElement(
+						'span',
+						{ className: 'game-params__turn ' + turnClass },
+						currentTurn
 					)
 				)
 			);
@@ -19353,7 +19363,7 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, ".game{\r\n\tposition: relative;\r\n}\r\n.game--visible{}\r\n\r\n.playground{\r\n\theight: 300px;\r\n\tborder-collapse: collapse; \r\n\tcursor: pointer;\r\n\tbackground: rgba(255, 255, 255, 1);\r\n\ttransition: .5s;\r\n}\r\n.playground--disable{\r\n\tbackground: rgba(100, 100, 100, 0.7); \r\n\tcursor: default;\r\n}\r\n\r\n.playground__cell{\r\n\twidth: 100px;\r\n\theight: 100px;\r\n\ttext-align: center;\r\n\tfont-size: 40px;\r\n\tborder: 1px solid;\r\n\tbox-sizing: border-box;\r\n\topacity: 1;\r\n\ttransition: 1s;\r\n}\r\n\r\n.playground__cell--empty{\r\n\topacity: 0\r\n}\r\n\r\n.playground__cell--bigRed{\r\n\tfont-size: 80px;\r\n\tcolor: red;\r\n\tanimation: shake .5s ease-in-out 0s infinite alternate;\r\n}\r\n\r\n.playground__cell--bigRed-1{\r\n\tanimation-delay: .2s\r\n}\r\n.playground__cell--bigRed-2{\r\n\tanimation-delay: .4s\r\n}\r\n\r\n@keyframes shake{\r\n\tfrom{\r\n\t\ttransform: rotate(0deg);\r\n\t}\r\n\r\n\t50%{\r\n\t\ttransform: rotate(-30deg);\r\n\t}\r\n\r\n\tto{\r\n\t\ttransform: rotate(30deg);\r\n\t}\r\n}\r\n\r\n\r\n.playground__popup{\r\n\tposition: absolute;\r\n\twidth: 100%;\r\n\theight: 100%;\r\n\topacity: 0;\r\n\ttransition: 1s;\r\n\tbackground: white;\r\n\tborder:1px dashed red;\r\n\tz-index: 0;\r\n\r\n\tdisplay: flex;\r\n\tflex-flow: column wrap;\r\n\tjustify-content: center;\r\n\t-ms-align-items: center;\r\n\talign-items: center;\r\n}\r\n.playground__popup--visible{\r\n\topacity: 1;\r\n\tz-index: 1;\r\n}\r\n.playground__popup--win{\r\n\tbackground: #82b21e;\r\n}\r\n.playground__popup--fail{\r\n\tbackground: #ea8168;\r\n}\r\n.playground__popup--draw{\r\n\tbackground: #f8e2c3;\r\n}\r\n\r\n.playground__restartBtn{\r\n\topacity: 0;\r\n\twidth:100px;\r\n\theight: 40px;\r\n\tcursor:pointer;\r\n\tmargin: 0 auto;\r\n\tborder: 1px dashed #603935;\r\n\toutline: none;\r\n\ttransition: 1s .5s;\r\n}\r\n.playground__restartBtn--visible{\r\n\topacity: 1;\r\n}", ""]);
+exports.push([module.i, ".game{\r\n\tposition: relative;\r\n\ttransition: 1s;\r\n\topacity: 0;\r\n\tmargin: 30px;\r\n}\r\n.game--visible{\r\n\topacity: 1;\r\n}\r\n\r\n\r\n.playground{\r\n\theight: 300px;\r\n\tborder-collapse: collapse; \r\n\tcursor: pointer;\r\n\tbackground: rgba(255, 255, 255, 1);\r\n\ttransition: .5s;\r\n}\r\n.playground--disable{\r\n\tbackground: rgba(100, 100, 100, 0.2); \r\n\tcursor: default;\r\n}\r\n\r\n.playground__cell{\r\n\twidth: 100px;\r\n\theight: 100px;\r\n\ttext-align: center;\r\n\tfont-size: 40px;\r\n\tborder: 1px solid;\r\n\tbox-sizing: border-box;\r\n\topacity: 1;\r\n\ttransition: 1s;\r\n}\r\n\r\n.playground__cell--empty{\r\n\topacity: 0\r\n}\r\n\r\n.playground__cell--bigRed{\r\n\tfont-size: 80px;\r\n\tcolor: red;\r\n\tanimation: shake .5s ease-in-out 0s infinite alternate;\r\n}\r\n\r\n.playground__cell--bigRed-1{\r\n\tanimation-delay: .2s\r\n}\r\n.playground__cell--bigRed-2{\r\n\tanimation-delay: .4s\r\n}\r\n\r\n@keyframes shake{\r\n\tfrom{\r\n\t\ttransform: rotate(0deg);\r\n\t}\r\n\r\n\t50%{\r\n\t\ttransform: rotate(-30deg);\r\n\t}\r\n\r\n\tto{\r\n\t\ttransform: rotate(30deg);\r\n\t}\r\n}\r\n\r\n\r\n.playground__popup{\r\n\tposition: absolute;\r\n\twidth: 300px;\r\n\theight: 300px;\r\n\topacity: 0;\r\n\ttransition: 1s;\r\n\tbackground: white;\r\n\tborder:1px solid;\r\n\tz-index: 0;\r\n\r\n\tdisplay: flex;\r\n\tflex-flow: column wrap;\r\n\tjustify-content: center;\r\n\t-ms-align-items: center;\r\n\talign-items: center;\r\n}\r\n.playground__popup--visible{\r\n\topacity: 1;\r\n\tz-index: 1;\r\n}\r\n\r\n.playground__popup--win{\r\n\tbackground: #82b21e;\r\n}\r\n.playground__popup--fail{\r\n\tbackground: #ea8168;\r\n}\r\n.playground__popup--draw{\r\n\tbackground: #f8e2c3;\r\n}\r\n\r\n.playground__restartBtn{\r\n\topacity: 0;\r\n\twidth:300px;\r\n\theight: 30px;\r\n\tline-height: 30px;\r\n\tcursor:pointer;\r\n\tmargin: 0 auto;\r\n\tborder: 1px dashed;\r\n\tbox-sizing: border-box;\r\n\toutline: none;\r\n\ttransition: 1s .5s;\r\n\tdisplay: none;\r\n\tposition: absolute;\r\n\tbottom: -34px\r\n}\r\n.playground__restartBtn--visible{\r\n\topacity: 1;\r\n\tdisplay: block;\r\n}\r\n\r\n.game-params{\r\n\tposition: absolute;\r\n\twidth:300px;\r\n\tbottom: -50px;\r\n\theight: 30px;\r\n\tline-height: 30px;\r\n\tpadding: 0px 5px;\r\n\tbox-sizing: border-box;\r\n\tuser-select: none;\r\n}\r\n.game-params--hidden{\r\n\topacity: 0;\r\n}\r\n\r\n.game-params__turn{\r\n\tposition: absolute;\r\n\twidth: 100px;\r\n\ttext-align: center;\r\n\tright: 0px;\r\n\ttransition: .5s;\r\n\tborder-left: 1px solid lightgrey;\r\n}\r\n\r\n.game-params__turn--my{\r\n\tbackground: #82b21e;\r\n}\r\n.game-params__turn--enemy{\r\n\tbackground: #ea8168;\r\n}\r\n\r\n.game-params__sign{\r\n\tfont-weight: bolder;\r\n}\r\n\r\n\r\n", ""]);
 
 // exports
 
@@ -19396,17 +19406,14 @@ var Popup = function (_React$Component) {
 			switch (status) {
 				case 'win':
 					text = 'Соперник повержен!';
-
 					break;
 
 				case 'fail':
 					text = 'Вы проиграли';
-
 					break;
 
 				case 'draw':
 					text = 'Ничья';
-
 					break;
 
 			}
@@ -19513,7 +19520,9 @@ var Chat = function (_React$Component) {
 			}
 
 			var messages = this.state.messages;
+
 			messages.push(message);
+
 			this.setState({
 				messages: messages
 			});
@@ -19575,7 +19584,7 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, ".chat{\r\n\twidth:100%;\r\n\tmax-width: 600px;\r\n\tmin-width: 300px;\r\n\theight: 300px;\r\n\tposition: relative;\r\n\tborder: 1px solid grey;\r\n\tborder-bottom: none;\r\n\tmargin: 10px 20px;\r\n}\r\n\r\n.chat__log{\r\n\twidth:100%;\r\n\theight: 260px;\r\n\tborder-bottom: 1px solid grey;\r\n\toverflow: auto;\r\n}\r\n\r\n.chat__input{\r\n\twidth:80%;\r\n\theight:40px;\r\n\tline-height: 40px;\r\n\tpadding: 0px 5px;\r\n\toutline: none;\r\n\tborder: none;\r\n\tborder-top: 1px solid grey;\r\n\tbox-sizing: border-box;\r\n\tfont-size: 24px;\r\n\tposition: absolute;\r\n\tbottom: 0;\r\n\tleft: 0;\r\n}\r\n\r\n.chat-form{\r\n\twidth:100%;\r\n\theight: 40px;\r\n\tposition: relative;\r\n\tborder-bottom: 1px solid;\r\n\tbox-sizing: border-box;\r\n}\r\n.chat-form__input{\r\n\tposition: absolute;\r\n\tbottom: 0;\r\n\tleft: 0;\r\n\twidth:80%;\r\n\theight:40px;\r\n\tline-height: 40px;\r\n\tpadding: 0px 5px;\r\n\toutline: none;\r\n\tborder: none;\r\n\tborder-top: 1px solid grey;\r\n\tbox-sizing: border-box;\r\n\tfont-size: 24px;\r\n}\r\n.chat-form__submitBtn{\r\n\twidth:20%;\r\n\theight: 40px;\r\n\tbox-sizing: border-box;\r\n\tposition: absolute;\r\n\tbottom: 0;\r\n\tright: 0;\r\n}", ""]);
+exports.push([module.i, ".chat{\r\n\twidth:100%;\r\n\tmax-width: 600px;\r\n\tmin-width: 300px;\r\n\theight: 300px;\r\n\tposition: relative;\r\n\tborder: 1px solid grey;\r\n\tborder-bottom: none;\r\n\tmargin: 10px 20px;\r\n}\r\n\r\n.chat__log{\r\n\twidth:100%;\r\n\theight: 260px;\r\n\tborder-bottom: 1px solid grey;\r\n\toverflow: auto;\r\n}\r\n\r\n.chat__input{\r\n\twidth:80%;\r\n\theight:40px;\r\n\tline-height: 40px;\r\n\tpadding: 0px 5px;\r\n\toutline: none;\r\n\tborder: none;\r\n\tborder-top: 1px solid grey;\r\n\tbox-sizing: border-box;\r\n\tfont-size: 24px;\r\n\tposition: absolute;\r\n\tbottom: 0;\r\n\tleft: 0;\r\n}\r\n\r\n.chat-form{\r\n\twidth:100%;\r\n\theight: 40px;\r\n\tposition: relative;\r\n\tborder-bottom: 1px solid;\r\n\tbox-sizing: border-box;\r\n}\r\n.chat-form__input{\r\n\tposition: absolute;\r\n\tbottom: 0;\r\n\tleft: 0;\r\n\twidth:80%;\r\n\theight:40px;\r\n\tline-height: 40px;\r\n\tpadding: 0px 5px;\r\n\toutline: none;\r\n\tborder: none;\r\n\tborder-top: 1px solid grey;\r\n\tbox-sizing: border-box;\r\n\tfont-size: 24px;\r\n}\r\n.chat-form__submitBtn{\r\n\toutline: none;\r\n\tborder-left: 1px solid grey;\r\n\tborder-top: 1px solid grey;\r\n\tborder:1px solid grey;\r\n\tbackground: white;\r\n\twidth:20%;\r\n\theight: 40px;\r\n\tbox-sizing: border-box;\r\n\tposition: absolute;\r\n\tbottom: 0;\r\n\tright: 0;\r\n}\r\n\r\n\r\n.message{\r\n\tpadding: 2px;\r\n\ttext-align: right;\r\n}\r\n.message--fromMe{\r\n\ttext-align: left;\r\n}\r\n\r\n.message__userName{\r\n\tdisplay: inline-block;\r\n\tpadding: 5px;\r\n\ttext-align: center;\r\n\tfloat: right;\r\n}\r\n\r\n.message--fromMe .message__userName{\r\n\tfloat: left;\r\n}\r\n\r\n.message__message-body{\r\n\tdisplay: inline-block;\r\n\tborder: 1px solid transparent;\r\n\tborder-radius: 5px;\r\n\tpadding: 5px;\r\n\tbackground: #ea8168;\r\n\ttext-align: right;\r\n}\r\n\r\n.message--fromMe .message__message-body{\r\n\tbackground: #82b21e;\r\n\ttext-align: left;\r\n}\r\n", ""]);
 
 // exports
 
@@ -19688,8 +19697,6 @@ var ChatMessages = function (_React$Component) {
 				React.createElement(
 					'div',
 					{ className: 'message__userName' },
-
-					/* this.props.username */
 					messageFrom
 				),
 				React.createElement(
@@ -19755,10 +19762,14 @@ var ChatInput = function (_React$Component) {
 			this.setState({
 				chatInput: ''
 			});
+
+			this.inputDom.focus();
 		}
 	}, {
 		key: 'render',
 		value: function render() {
+			var _this2 = this;
+
 			return React.createElement(
 				'form',
 				{ className: 'chat-form', onSubmit: this.submitHandler },
@@ -19767,6 +19778,9 @@ var ChatInput = function (_React$Component) {
 					className: 'chat-form__input',
 					onChange: this.textChangeHandler,
 					value: this.state.chatInput,
+					ref: function ref(inputDom) {
+						return _this2.inputDom = inputDom;
+					},
 					placeholder: '...',
 					required: true
 				}),
@@ -19808,106 +19822,96 @@ var Infobar = function (_React$Component) {
 	function Infobar(props) {
 		_classCallCheck(this, Infobar);
 
-		return _possibleConstructorReturn(this, (Infobar.__proto__ || Object.getPrototypeOf(Infobar)).call(this, props));
+		var _this = _possibleConstructorReturn(this, (Infobar.__proto__ || Object.getPrototypeOf(Infobar)).call(this, props));
+
+		_this.state = {
+			visible: props.visibility,
+			winsX: 0,
+			wins0: 0,
+			winsDraw: 0
+		};
+
+		socket.on('endGame', function (props) {
+			var statistic = props.statistic;
+
+			l(statistic);
+
+			_this.setState(function (prevState) {
+				return {
+					winsX: statistic['X'],
+					wins0: statistic['0'],
+					winsDraw: statistic['draw']
+				};
+			});
+		});
+		return _this;
 	}
 
 	_createClass(Infobar, [{
-		key: "componentDidMount",
-		value: function componentDidMount() {}
+		key: 'componentWillReceiveProps',
+		value: function componentWillReceiveProps(props) {
+			this.setState(function (prevState) {
+				return {
+					visible: props.visibility
+				};
+			});
+		}
 	}, {
-		key: "render",
+		key: 'render',
 		value: function render() {
+			var infobarVisibility = this.state.visible ? 'infobar--visible' : '';
+
 			return React.createElement(
-				"div",
-				{ className: "infobar" },
+				'table',
+				{ className: 'infobar ' + infobarVisibility },
 				React.createElement(
-					"table",
-					{ className: "infobar-signs" },
+					'tbody',
+					null,
 					React.createElement(
-						"tbody",
+						'tr',
 						null,
 						React.createElement(
-							"tr",
-							null,
-							React.createElement(
-								"td",
-								null,
-								" Your "
-							),
-							React.createElement(
-								"td",
-								null,
-								" Turn "
-							)
-						),
-						React.createElement(
-							"tr",
-							null,
-							React.createElement(
-								"td",
-								{ className: "infobar-signs__player" },
-								" "
-							),
-							React.createElement(
-								"td",
-								{ className: "infobar-signs__turn" },
-								" "
-							)
+							'td',
+							{ colSpan: '3' },
+							' Wins '
 						)
-					)
-				),
-				React.createElement(
-					"table",
-					{ className: "infobar-wins" },
+					),
 					React.createElement(
-						"tbody",
+						'tr',
 						null,
 						React.createElement(
-							"tr",
+							'td',
 							null,
-							React.createElement(
-								"td",
-								{ colSpan: "3" },
-								" Wins "
-							)
+							'X'
 						),
 						React.createElement(
-							"tr",
+							'td',
 							null,
-							React.createElement(
-								"td",
-								null,
-								"X"
-							),
-							React.createElement(
-								"td",
-								null,
-								"draw"
-							),
-							React.createElement(
-								"td",
-								null,
-								"0"
-							)
+							'draw'
 						),
 						React.createElement(
-							"tr",
+							'td',
 							null,
-							React.createElement(
-								"td",
-								{ className: "infobar-wins__X" },
-								"0"
-							),
-							React.createElement(
-								"td",
-								{ className: "infobar-wins__draw" },
-								"0"
-							),
-							React.createElement(
-								"td",
-								{ className: "infobar-wins__0" },
-								"0"
-							)
+							'0'
+						)
+					),
+					React.createElement(
+						'tr',
+						null,
+						React.createElement(
+							'td',
+							{ className: 'infobar-wins__X' },
+							this.state.winsX
+						),
+						React.createElement(
+							'td',
+							{ className: 'infobar-wins__draw' },
+							this.state.winsDraw
+						),
+						React.createElement(
+							'td',
+							{ className: 'infobar-wins__0' },
+							this.state.wins0
 						)
 					)
 				)

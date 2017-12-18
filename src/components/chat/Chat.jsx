@@ -53,7 +53,9 @@ class Chat extends React.Component{
 		}
 
 		const messages = this.state.messages;
+
 		messages.push(message)
+
 		this.setState({
 			messages: messages
 		})

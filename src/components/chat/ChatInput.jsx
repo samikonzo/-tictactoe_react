@@ -25,6 +25,8 @@ class ChatInput extends React.Component{
 		this.setState({
 			chatInput: ''
 		})
+
+		this.inputDom.focus()
 	}
 
 	render(){
@@ -35,6 +37,7 @@ class ChatInput extends React.Component{
 					className="chat-form__input"
 					onChange={this.textChangeHandler}
 					value={this.state.chatInput}
+					ref={inputDom => this.inputDom = inputDom}
 					placeholder="..."
 					required
 				/>

@@ -116,20 +116,29 @@ class Game extends React.Component{
 	}
 
 	endGame(props){
-		this.showWinCombination(props.winArr)
+		var popupStatus;
+		if(props.state == 'draw') popupStatus = 'draw'
+		else popupStatus = (props.winSign == this.state.playerSign) ? 'win' : 'fail'
 
-		setTimeout( () => {
+		if(popupStatus == 'draw'){
 			this.setState( prevState => {
-				var popupStatus;
-				if(props.state == 'draw') popupStatus = 'draw'
-				else popupStatus = (props.winSign == prevState.playerSign) ? 'win' : 'fail'
-
 				return { 
 					popup: true,
 					popupStatus: popupStatus
 				}
 			})
-		}, 1000)
+		} else {
+			this.showWinCombination(props.winArr)
+
+			setTimeout( () => {
+				this.setState( prevState => {
+					return { 
+						popup: true,
+						popupStatus: popupStatus
+					}
+				})
+			}, 1000)
+		}
 	}
 
 	showWinCombination(winArr){
@@ -156,46 +165,33 @@ class Game extends React.Component{
 	}
 
 	restartGame(props){
-		// you will turn first or not
-		// disable playground for 1s for clear tds
-		// hide popup
-		// enable playground if need
+		//
 		var turn = props.turn
-		var willBeEnableAfterClear = turn
 		this.setState(prevState => {
 			return {
-				enable: false,
+				enable: turn,
 				playerTurn: turn,
 				popup: false,
 			}
-		})
-
-		// and enable playground if need
-		if(willBeEnableAfterClear){
-			setTimeout(() => {
-				this.setState({
-					enable: true
-				})
-			},1000)
-		}
+		});
 
 		// clear tds
 		[].forEach.call(this.playground.querySelectorAll('td'), td => {
 			delete td.buzy 
 			td.classList.add('playground__cell--empty')
-			setTimeout(() => {
-				td.innerHTML = ''
-			}, 1000)
+			td.innerHTML = ''
 		})
-
-
-		
+	
 	}
 
 	render(){
 
 		var gameVisibility = this.state.visible ? 'game--visible' : 'game--hidden'
 		var playgroundEnable = this.state.enable ? '' : 'playground--disable'
+		var currentTurn = this.state.playerTurn ? 'your turn' : 'enemy turn'
+		var turnClass = this.state.playerTurn ? 'game-params__turn--my' : 'game-params__turn--enemy'
+		var paramsHidden = this.state.popup ? 'game-params--hidden' : ''
+
 
 		return(
 			<div className={`game ${gameVisibility}`}>
@@ -220,6 +216,11 @@ class Game extends React.Component{
 						</tr>
 					</tbody>
 				</table>
+
+				<p className={`game-params ${paramsHidden}`}>
+					You play : <span className="game-params__sign">{this.state.playerSign}</span>
+					<span className={`game-params__turn ${turnClass}`}>{currentTurn}</span>
+				</p>
 			</div>
 			
 		)

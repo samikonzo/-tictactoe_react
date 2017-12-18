@@ -22,6 +22,8 @@ html, body{
 	-ms-align-items: center;
 	align-items: center;
 	align-content: center; 
+
+	padding: 10px;
 }
 
 
@@ -51,3 +53,32 @@ html, body{
 	top: -100%;
 }
 
+
+.infobar{
+	width:300px;
+	position: relative;
+	margin: 10px 0px;
+	opacity: 0;
+	transition: 1s;
+	text-align: center;
+	border-collapse: collapse;
+}
+.infobar--visible{
+	opacity: 1;
+}
+
+.infobar tr:first-child{
+	border-bottom: 1px solid lightgrey;
+}
+
+.infobar td{
+	width:100px;
+	height: 20px;
+	text-align: center;
+}
+
+.infobar-wins__X{}
+
+.infobar-wins__draw{}
+
+.infobar-wins__0{}

@@ -3,48 +3,61 @@ var React = require('react')
 class Infobar extends React.Component{
 	constructor(props){
 		super(props)
+
+		this.state = {
+			visible 	: props.visibility, 
+			winsX 		: 0,
+			wins0 		: 0,
+			winsDraw 	: 0 
+		}
+
+		socket.on('endGame', props => {
+			var statistic = props.statistic
+
+			l(statistic)
+
+			this.setState(prevState => {
+				return {
+					winsX: statistic['X'],
+					wins0: statistic['0'],
+					winsDraw: statistic['draw'],
+				}
+			})			
+		})
 	}
 
-	componentDidMount(){
+	componentWillReceiveProps(props){
+		this.setState(prevState => {
+			return {
+				visible: props.visibility
+			}
+		})
 	}
 
 	render(){
+		var infobarVisibility = this.state.visible ? 'infobar--visible' : '' 
+
 		return(
-			<div className="infobar">
-				<table className="infobar-signs">
-					<tbody>
-						<tr>
-							<td> Your </td>
-							<td> Turn </td>
-						</tr>
+			<table className={`infobar ${infobarVisibility}`}>
+				<tbody>
+					<tr>
+						<td colSpan="3"> Wins </td>
+					</tr>
 
-						<tr>
-							<td className="infobar-signs__player"> </td>
-							<td className="infobar-signs__turn"> </td>
-						</tr>
-					</tbody>
-				</table>
+					<tr>
+						<td>X</td>
+						<td>draw</td>
+						<td>0</td>
+					</tr>
 
-				<table className="infobar-wins">
-					<tbody>
-						<tr>
-							<td colSpan="3"> Wins </td>
-						</tr>
+					<tr>
+						<td className="infobar-wins__X">{this.state.winsX}</td>
+						<td className="infobar-wins__draw">{this.state.winsDraw}</td>
+						<td className="infobar-wins__0">{this.state.wins0}</td>
+					</tr>
+				</tbody>
+			</table>
 
-						<tr>
-							<td>X</td>
-							<td>draw</td>
-							<td>0</td>
-						</tr>
-
-						<tr>
-							<td className="infobar-wins__X">0</td>
-							<td className="infobar-wins__draw">0</td>
-							<td className="infobar-wins__0">0</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
 		)
 	}
 
