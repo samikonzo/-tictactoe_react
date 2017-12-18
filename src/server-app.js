@@ -316,6 +316,7 @@ module.exports = function(app, io) {
 			io.to(that.id).emit('waiting', {
 				link: 'invite_' + that.id,
 			})
+
 		}
 
 		function start(){
@@ -327,12 +328,11 @@ module.exports = function(app, io) {
 			turn = 0 // num in players array
 			sign = 'X' // first 
 
-			socketX.emit('start', {turn: true})
-			socketO.emit('start', {turn: false})
+			setTimeout(function(){
+				socketX.emit('start', {turn: true})
+				socketO.emit('start', {turn: false})
+			}, 100)
 
-			//if(watchmen.length){
-			//	whatchmen.forEach
-			//}
 		}
 
 		function nextTurn(){

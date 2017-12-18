@@ -18775,8 +18775,6 @@ var App = function (_React$Component) {
 		value: function componentDidMount() {
 			var _this2 = this;
 
-			socket.emit('getState');
-
 			//Listening
 			socket.on('waiting', function (props) {
 				var href = window.location.href.split('invite')[0] + props.link;
@@ -18807,6 +18805,8 @@ var App = function (_React$Component) {
 					};
 				});
 			});
+
+			socket.emit('getState');
 		}
 	}, {
 		key: 'copyLink',
