@@ -18807,6 +18807,7 @@ var App = function (_React$Component) {
 			});
 
 			socket.emit('getState');
+			//??socket.emit('ready')
 		}
 	}, {
 		key: 'copyLink',
@@ -19081,6 +19082,12 @@ var Game = function (_React$Component) {
 
 			//listen messages
 		};socket.on('start', function (props) {
+			[].forEach.call(_this.playground.querySelectorAll('td'), function (td) {
+				delete td.buzy;
+				td.classList.add('playground__cell--empty');
+				td.innerHTML = '';
+			});
+
 			_this.setState(function (prevState) {
 				return {
 					enable: props.turn,
@@ -19247,6 +19254,15 @@ var Game = function (_React$Component) {
 			});
 
 			// clear tds
+			[].forEach.call(this.playground.querySelectorAll('td'), function (td) {
+				delete td.buzy;
+				td.classList.add('playground__cell--empty');
+				td.innerHTML = '';
+			});
+		}
+	}, {
+		key: 'clearGame',
+		value: function clearGame() {
 			[].forEach.call(this.playground.querySelectorAll('td'), function (td) {
 				delete td.buzy;
 				td.classList.add('playground__cell--empty');

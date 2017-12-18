@@ -19,6 +19,12 @@ class Game extends React.Component{
 
 		//listen messages
 		socket.on('start', props => {
+			[].forEach.call(this.playground.querySelectorAll('td'), td => {
+				delete td.buzy 
+				td.classList.add('playground__cell--empty')
+				td.innerHTML = ''
+			})
+
 			this.setState( prevState => {
 				return {
 					enable: props.turn,
@@ -182,6 +188,14 @@ class Game extends React.Component{
 			td.innerHTML = ''
 		})
 	
+	}
+
+	clearGame(){
+		[].forEach.call(this.playground.querySelectorAll('td'), td => {
+			delete td.buzy 
+			td.classList.add('playground__cell--empty')
+			td.innerHTML = ''
+		})
 	}
 
 	render(){

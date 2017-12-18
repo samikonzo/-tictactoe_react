@@ -307,6 +307,7 @@ module.exports = function(app, io) {
 
 		function clearGame(){
 			that.game = [new Array(3), new Array(3), new Array(3)]
+			io.to(that.id).emit('clearGame')
 		}
 
 		// client
