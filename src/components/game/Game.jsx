@@ -30,7 +30,8 @@ class Game extends React.Component{
 					enable: props.turn,
 					playerTurn: props.turn,
 					playerSign: props.turn ? 'X' : '0',
-					playerEnemySign: props.turn ? '0' : 'X'
+					playerEnemySign: props.turn ? '0' : 'X',
+					popup: false,
 				}
 			})
 		})
