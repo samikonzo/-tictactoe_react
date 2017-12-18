@@ -9,7 +9,7 @@ class Popup extends React.Component{
 		var text
 
 		switch(status){
-			case 'win' : 	text = 'Соперник повержен!'
+			case 'win' : 	text = 'Ура! Вы победили!'
 							break;
 
 			case 'fail': 	text = 'Вы проиграли'

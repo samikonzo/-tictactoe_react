@@ -7,6 +7,11 @@
 	border: 1px solid grey;
 	border-bottom: none;
 	margin: 10px 20px;
+	opacity: 0;
+	transition: 1s;
+}
+.chat--visible{
+	opacity: 1;
 }
 
 .chat__log{
@@ -90,7 +95,7 @@
 	display: inline-block;
 	border: 1px solid transparent;
 	border-radius: 5px;
-	padding: 5px;
+	padding: 2px 8px;
 	background: #ea8168;
 	text-align: right;
 }

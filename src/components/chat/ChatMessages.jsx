@@ -5,9 +5,7 @@ class ChatMessages extends React.Component{
 	componentDidUpdate(){
 		if(this.list){
 			this.list.scrollTop = this.list.scrollHeight
-		} else {
-			console.log('ChatMessages : no this.list =((')
-		}
+		} 
 	}	
 
 	render(){

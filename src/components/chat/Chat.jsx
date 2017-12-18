@@ -34,14 +34,20 @@ class Chat extends React.Component{
 			this.addMessage(message)
 		})
 
+		/*socket.on('chatTyping', () => {
+			this.showEnemyTyping()
+		})*/
+
 		this.sendHandler = this.sendHandler.bind(this)
 		this.addMessage = this.addMessage.bind(this)
+		//this.showEnemyTyping = this.showEnemyTyping.bind(this)
 	}
 
 	sendHandler(message){
 		const messageObject = {
 			username: this.state.username,
 			message: message,
+			//enemyTyping: false,
 		}
 
 		socket.emit('chatMessage', messageObject)
@@ -61,19 +67,25 @@ class Chat extends React.Component{
 		})
 	}
 
+	showEnemyTyping(){
+		/*this.setState({
+			enemyTyping: true
+		})*/
+	}
+
 	render(){
+
+		const chatVisibility = this.props.visibility ? 'chat--visible' : ''
+
 		return(
-			<div className="chat">
-				<Messages messages={this.state.messages}/>
+			<div className={`chat ${chatVisibility}`}>
+				<Messages messages={this.state.messages} enemyTyping={this.state.enemyTyping}/>
 				<ChatInput onSend={this.sendHandler}/>	
 			</div>
 		)
 	}
 
 }
-
-
-
 
 
 module.exports = Chat

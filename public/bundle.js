@@ -18938,7 +18938,7 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, "html, body{\r\n\tmargin: 0;\r\n\tpadding: 0;\r\n\twidth:100%;\r\n\theight: 100%;\r\n}\r\n\r\n#app{\r\n\twidth: 100%;\r\n\theight: 100%;\r\n\tposition: relative;\r\n}\r\n\r\n.wrapper{\r\n\twidth: 100%;\r\n\theight: 100%;\r\n\tposition: relative;\r\n\r\n\tdisplay: flex;\r\n\tflex-flow: row-reverse wrap;\r\n\tjustify-content: center;\r\n\t-ms-align-items: center;\r\n\talign-items: center;\r\n\talign-content: center; \r\n\r\n\tpadding: 10px;\r\n}\r\n\r\n\r\n.mask{\r\n\tposition: absolute;\r\n\tz-index: 2;\r\n\ttop: 0;\r\n\twidth: 100%;\r\n\theight: 100%;\r\n\tmax-height: 100%;\r\n\topacity: 1;\r\n\tbackground: white;\r\n\tborder:1px solid;\r\n\tbox-sizing: border-box;\r\n\ttransition: 2s;\r\n\tuser-select: none;\r\n\r\n\tdisplay: flex;\r\n\tflex-flow: column wrap;\r\n\tjustify-content: center;\r\n\t-ms-align-items: center;\r\n\talign-items: center;\r\n\talign-content: center;\r\n}\r\n\r\n.mask--hidden{\r\n\ttop: -100%;\r\n}\r\n\r\n\r\n.infobar{\r\n\twidth:300px;\r\n\tposition: relative;\r\n\tmargin: 10px 0px;\r\n\topacity: 0;\r\n\ttransition: 1s;\r\n\ttext-align: center;\r\n\tborder-collapse: collapse;\r\n}\r\n.infobar--visible{\r\n\topacity: 1;\r\n}\r\n\r\n.infobar tr:first-child{\r\n\tborder-bottom: 1px solid lightgrey;\r\n}\r\n\r\n.infobar td{\r\n\twidth:100px;\r\n\theight: 20px;\r\n\ttext-align: center;\r\n}\r\n\r\n.infobar-wins__X{}\r\n\r\n.infobar-wins__draw{}\r\n\r\n.infobar-wins__0{}\r\n", ""]);
+exports.push([module.i, "html, body{\r\n\tmargin: 0;\r\n\tpadding: 0;\r\n\twidth:100%;\r\n\theight: 100%;\r\n}\r\n\r\n#app{\r\n\twidth: 100%;\r\n\theight: 100%;\r\n\tposition: relative;\r\n}\r\n\r\n.wrapper{\r\n\twidth: 100%;\r\n\theight: 100%;\r\n\tposition: relative;\r\n\r\n\tdisplay: flex;\r\n\tflex-flow: row-reverse wrap;\r\n\tjustify-content: center;\r\n\t-ms-align-items: center;\r\n\talign-items: center;\r\n\talign-content: center; \r\n\r\n\tpadding: 10px;\r\n\tbox-sizing: border-box;\r\n}\r\n\r\n\r\n.mask{\r\n\tposition: absolute;\r\n\tz-index: 2;\r\n\ttop: 0;\r\n\twidth: 100%;\r\n\theight: 100%;\r\n\tmax-height: 100%;\r\n\topacity: 1;\r\n\tbackground: white;\r\n\tbox-sizing: border-box;\r\n\ttransition: 2s;\r\n\tuser-select: none;\r\n\r\n\tdisplay: flex;\r\n\tflex-flow: column wrap;\r\n\tjustify-content: center;\r\n\t-ms-align-items: center;\r\n\talign-items: center;\r\n\talign-content: center;\r\n}\r\n\r\n.mask--hidden{\r\n\ttop: -100%;\r\n}\r\n\r\n\r\n.infobar{\r\n\twidth:300px;\r\n\tposition: relative;\r\n\tmargin: 10px 0px;\r\n\topacity: 0;\r\n\ttransition: 1s;\r\n\ttext-align: center;\r\n\tborder-collapse: collapse;\r\n}\r\n.infobar--visible{\r\n\topacity: 1;\r\n}\r\n\r\n.infobar tr:first-child{\r\n\tborder-bottom: 1px solid lightgrey;\r\n}\r\n.infobar tr:last-child{\r\n\theight: 30px;\r\n}\r\n\r\n.infobar td{\r\n\twidth:100px;\r\n\theight: 20px;\r\n\ttext-align: center;\r\n}\r\n\r\n.infobar-wins__X{}\r\n\r\n.infobar-wins__draw{}\r\n\r\n.infobar-wins__0{}\r\n", ""]);
 
 // exports
 
@@ -19363,7 +19363,7 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, ".game{\r\n\tposition: relative;\r\n\ttransition: 1s;\r\n\topacity: 0;\r\n\tmargin: 30px;\r\n}\r\n.game--visible{\r\n\topacity: 1;\r\n}\r\n\r\n\r\n.playground{\r\n\theight: 300px;\r\n\tborder-collapse: collapse; \r\n\tcursor: pointer;\r\n\tbackground: rgba(255, 255, 255, 1);\r\n\ttransition: .5s;\r\n}\r\n.playground--disable{\r\n\tbackground: rgba(100, 100, 100, 0.2); \r\n\tcursor: default;\r\n}\r\n\r\n.playground__cell{\r\n\twidth: 100px;\r\n\theight: 100px;\r\n\ttext-align: center;\r\n\tfont-size: 40px;\r\n\tborder: 1px solid;\r\n\tbox-sizing: border-box;\r\n\topacity: 1;\r\n\ttransition: 1s;\r\n}\r\n\r\n.playground__cell--empty{\r\n\topacity: 0\r\n}\r\n\r\n.playground__cell--bigRed{\r\n\tfont-size: 80px;\r\n\tcolor: red;\r\n\tanimation: shake .5s ease-in-out 0s infinite alternate;\r\n}\r\n\r\n.playground__cell--bigRed-1{\r\n\tanimation-delay: .2s\r\n}\r\n.playground__cell--bigRed-2{\r\n\tanimation-delay: .4s\r\n}\r\n\r\n@keyframes shake{\r\n\tfrom{\r\n\t\ttransform: rotate(0deg);\r\n\t}\r\n\r\n\t50%{\r\n\t\ttransform: rotate(-30deg);\r\n\t}\r\n\r\n\tto{\r\n\t\ttransform: rotate(30deg);\r\n\t}\r\n}\r\n\r\n\r\n.playground__popup{\r\n\tposition: absolute;\r\n\twidth: 300px;\r\n\theight: 300px;\r\n\topacity: 0;\r\n\ttransition: 1s;\r\n\tbackground: white;\r\n\tborder:1px solid;\r\n\tz-index: 0;\r\n\r\n\tdisplay: flex;\r\n\tflex-flow: column wrap;\r\n\tjustify-content: center;\r\n\t-ms-align-items: center;\r\n\talign-items: center;\r\n}\r\n.playground__popup--visible{\r\n\topacity: 1;\r\n\tz-index: 1;\r\n}\r\n\r\n.playground__popup--win{\r\n\tbackground: #82b21e;\r\n}\r\n.playground__popup--fail{\r\n\tbackground: #ea8168;\r\n}\r\n.playground__popup--draw{\r\n\tbackground: #f8e2c3;\r\n}\r\n\r\n.playground__restartBtn{\r\n\topacity: 0;\r\n\twidth:300px;\r\n\theight: 30px;\r\n\tline-height: 30px;\r\n\tcursor:pointer;\r\n\tmargin: 0 auto;\r\n\tborder: 1px dashed;\r\n\tbox-sizing: border-box;\r\n\toutline: none;\r\n\ttransition: 1s .5s;\r\n\tdisplay: none;\r\n\tposition: absolute;\r\n\tbottom: -34px\r\n}\r\n.playground__restartBtn--visible{\r\n\topacity: 1;\r\n\tdisplay: block;\r\n}\r\n\r\n.game-params{\r\n\tposition: absolute;\r\n\twidth:300px;\r\n\tbottom: -50px;\r\n\theight: 30px;\r\n\tline-height: 30px;\r\n\tpadding: 0px 5px;\r\n\tbox-sizing: border-box;\r\n\tuser-select: none;\r\n}\r\n.game-params--hidden{\r\n\topacity: 0;\r\n}\r\n\r\n.game-params__turn{\r\n\tposition: absolute;\r\n\twidth: 100px;\r\n\ttext-align: center;\r\n\tright: 0px;\r\n\ttransition: .5s;\r\n\tborder-left: 1px solid lightgrey;\r\n}\r\n\r\n.game-params__turn--my{\r\n\tbackground: #82b21e;\r\n}\r\n.game-params__turn--enemy{\r\n\tbackground: #ea8168;\r\n}\r\n\r\n.game-params__sign{\r\n\tfont-weight: bolder;\r\n}\r\n\r\n\r\n", ""]);
+exports.push([module.i, ".game{\r\n\tposition: relative;\r\n\ttransition: 1s;\r\n\topacity: 0;\r\n\tmargin: 30px 0px;\r\n}\r\n.game--visible{\r\n\topacity: 1;\r\n}\r\n\r\n\r\n.playground{\r\n\theight: 300px;\r\n\tborder-collapse: collapse; \r\n\tcursor: pointer;\r\n\tbackground: rgba(255, 255, 255, 1);\r\n\ttransition: .5s;\r\n}\r\n.playground--disable{\r\n\tbackground: rgba(100, 100, 100, 0.2); \r\n\tcursor: default;\r\n}\r\n\r\n.playground__cell{\r\n\twidth: 100px;\r\n\theight: 100px;\r\n\ttext-align: center;\r\n\tfont-size: 40px;\r\n\tborder: 1px solid;\r\n\tbox-sizing: border-box;\r\n\topacity: 1;\r\n\ttransition: 1s;\r\n\tuser-select: none;\r\n}\r\n\r\n.playground__cell--empty{\r\n\topacity: 0\r\n}\r\n\r\n.playground__cell--bigRed{\r\n\tfont-size: 80px;\r\n\tcolor: red;\r\n\tanimation: shake .5s ease-in-out 0s infinite alternate;\r\n}\r\n\r\n.playground__cell--bigRed-1{\r\n\tanimation-delay: .2s\r\n}\r\n.playground__cell--bigRed-2{\r\n\tanimation-delay: .4s\r\n}\r\n\r\n@keyframes shake{\r\n\tfrom{\r\n\t\ttransform: rotate(0deg);\r\n\t}\r\n\r\n\t50%{\r\n\t\ttransform: rotate(-30deg);\r\n\t}\r\n\r\n\tto{\r\n\t\ttransform: rotate(30deg);\r\n\t}\r\n}\r\n\r\n\r\n.playground__popup{\r\n\tposition: absolute;\r\n\twidth: 300px;\r\n\theight: 300px;\r\n\topacity: 0;\r\n\ttransition: 1s;\r\n\tbackground: white;\r\n\tborder:1px solid;\r\n\tz-index: 0;\r\n\r\n\tdisplay: flex;\r\n\tflex-flow: column wrap;\r\n\tjustify-content: center;\r\n\t-ms-align-items: center;\r\n\talign-items: center;\r\n}\r\n.playground__popup--visible{\r\n\topacity: 1;\r\n\tz-index: 1;\r\n}\r\n\r\n.playground__popup--win{\r\n\tbackground: #82b21e;\r\n}\r\n.playground__popup--fail{\r\n\tbackground: #ea8168;\r\n}\r\n.playground__popup--draw{\r\n\tbackground: #f8e2c3;\r\n}\r\n\r\n.playground__restartBtn{\r\n\topacity: 0;\r\n\twidth:300px;\r\n\theight: 30px;\r\n\tline-height: 30px;\r\n\tcursor:pointer;\r\n\tmargin: 0 auto;\r\n\tborder: 1px dashed;\r\n\tbox-sizing: border-box;\r\n\toutline: none;\r\n\ttransition: 1s .5s;\r\n\tdisplay: none;\r\n\tposition: absolute;\r\n\tbottom: -34px\r\n}\r\n.playground__restartBtn--visible{\r\n\topacity: 1;\r\n\tdisplay: block;\r\n}\r\n\r\n.game-params{\r\n\tposition: absolute;\r\n\twidth:300px;\r\n\tbottom: -50px;\r\n\theight: 30px;\r\n\tline-height: 30px;\r\n\tpadding: 0px 5px;\r\n\tbox-sizing: border-box;\r\n\tuser-select: none;\r\n}\r\n.game-params--hidden{\r\n\topacity: 0;\r\n}\r\n\r\n.game-params__turn{\r\n\tposition: absolute;\r\n\twidth: 100px;\r\n\ttext-align: center;\r\n\tright: 0px;\r\n\ttransition: .5s;\r\n\tborder-left: 1px solid lightgrey;\r\n}\r\n\r\n.game-params__turn--my{\r\n\tbackground: #82b21e;\r\n}\r\n.game-params__turn--enemy{\r\n\tbackground: #ea8168;\r\n}\r\n\r\n.game-params__sign{\r\n\tfont-weight: bolder;\r\n}\r\n\r\n\r\n", ""]);
 
 // exports
 
@@ -19405,7 +19405,7 @@ var Popup = function (_React$Component) {
 
 			switch (status) {
 				case 'win':
-					text = 'Соперник повержен!';
+					text = 'Ура! Вы победили!';
 					break;
 
 				case 'fail':
@@ -19497,8 +19497,13 @@ var Chat = function (_React$Component) {
 			_this.addMessage(message);
 		});
 
+		/*socket.on('chatTyping', () => {
+  	this.showEnemyTyping()
+  })*/
+
 		_this.sendHandler = _this.sendHandler.bind(_this);
 		_this.addMessage = _this.addMessage.bind(_this);
+		//this.showEnemyTyping = this.showEnemyTyping.bind(this)
 		return _this;
 	}
 
@@ -19508,6 +19513,7 @@ var Chat = function (_React$Component) {
 			var messageObject = {
 				username: this.state.username,
 				message: message
+				//enemyTyping: false,
 			};
 
 			socket.emit('chatMessage', messageObject);
@@ -19528,12 +19534,22 @@ var Chat = function (_React$Component) {
 			});
 		}
 	}, {
+		key: 'showEnemyTyping',
+		value: function showEnemyTyping() {
+			/*this.setState({
+   	enemyTyping: true
+   })*/
+		}
+	}, {
 		key: 'render',
 		value: function render() {
+
+			var chatVisibility = this.props.visibility ? 'chat--visible' : '';
+
 			return React.createElement(
 				'div',
-				{ className: 'chat' },
-				React.createElement(Messages, { messages: this.state.messages }),
+				{ className: 'chat ' + chatVisibility },
+				React.createElement(Messages, { messages: this.state.messages, enemyTyping: this.state.enemyTyping }),
 				React.createElement(ChatInput, { onSend: this.sendHandler })
 			);
 		}
@@ -19584,7 +19600,7 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, ".chat{\r\n\twidth:100%;\r\n\tmax-width: 600px;\r\n\tmin-width: 300px;\r\n\theight: 300px;\r\n\tposition: relative;\r\n\tborder: 1px solid grey;\r\n\tborder-bottom: none;\r\n\tmargin: 10px 20px;\r\n}\r\n\r\n.chat__log{\r\n\twidth:100%;\r\n\theight: 260px;\r\n\tborder-bottom: 1px solid grey;\r\n\toverflow: auto;\r\n}\r\n\r\n.chat__input{\r\n\twidth:80%;\r\n\theight:40px;\r\n\tline-height: 40px;\r\n\tpadding: 0px 5px;\r\n\toutline: none;\r\n\tborder: none;\r\n\tborder-top: 1px solid grey;\r\n\tbox-sizing: border-box;\r\n\tfont-size: 24px;\r\n\tposition: absolute;\r\n\tbottom: 0;\r\n\tleft: 0;\r\n}\r\n\r\n.chat-form{\r\n\twidth:100%;\r\n\theight: 40px;\r\n\tposition: relative;\r\n\tborder-bottom: 1px solid;\r\n\tbox-sizing: border-box;\r\n}\r\n.chat-form__input{\r\n\tposition: absolute;\r\n\tbottom: 0;\r\n\tleft: 0;\r\n\twidth:80%;\r\n\theight:40px;\r\n\tline-height: 40px;\r\n\tpadding: 0px 5px;\r\n\toutline: none;\r\n\tborder: none;\r\n\tborder-top: 1px solid grey;\r\n\tbox-sizing: border-box;\r\n\tfont-size: 24px;\r\n}\r\n.chat-form__submitBtn{\r\n\toutline: none;\r\n\tborder-left: 1px solid grey;\r\n\tborder-top: 1px solid grey;\r\n\tborder:1px solid grey;\r\n\tbackground: white;\r\n\twidth:20%;\r\n\theight: 40px;\r\n\tbox-sizing: border-box;\r\n\tposition: absolute;\r\n\tbottom: 0;\r\n\tright: 0;\r\n}\r\n\r\n\r\n.message{\r\n\tpadding: 2px;\r\n\ttext-align: right;\r\n}\r\n.message--fromMe{\r\n\ttext-align: left;\r\n}\r\n\r\n.message__userName{\r\n\tdisplay: inline-block;\r\n\tpadding: 5px;\r\n\ttext-align: center;\r\n\tfloat: right;\r\n}\r\n\r\n.message--fromMe .message__userName{\r\n\tfloat: left;\r\n}\r\n\r\n.message__message-body{\r\n\tdisplay: inline-block;\r\n\tborder: 1px solid transparent;\r\n\tborder-radius: 5px;\r\n\tpadding: 5px;\r\n\tbackground: #ea8168;\r\n\ttext-align: right;\r\n}\r\n\r\n.message--fromMe .message__message-body{\r\n\tbackground: #82b21e;\r\n\ttext-align: left;\r\n}\r\n", ""]);
+exports.push([module.i, ".chat{\r\n\twidth:100%;\r\n\tmax-width: 600px;\r\n\tmin-width: 300px;\r\n\theight: 300px;\r\n\tposition: relative;\r\n\tborder: 1px solid grey;\r\n\tborder-bottom: none;\r\n\tmargin: 10px 20px;\r\n\topacity: 0;\r\n\ttransition: 1s;\r\n}\r\n.chat--visible{\r\n\topacity: 1;\r\n}\r\n\r\n.chat__log{\r\n\twidth:100%;\r\n\theight: 260px;\r\n\tborder-bottom: 1px solid grey;\r\n\toverflow: auto;\r\n}\r\n\r\n.chat__input{\r\n\twidth:80%;\r\n\theight:40px;\r\n\tline-height: 40px;\r\n\tpadding: 0px 5px;\r\n\toutline: none;\r\n\tborder: none;\r\n\tborder-top: 1px solid grey;\r\n\tbox-sizing: border-box;\r\n\tfont-size: 24px;\r\n\tposition: absolute;\r\n\tbottom: 0;\r\n\tleft: 0;\r\n}\r\n\r\n.chat-form{\r\n\twidth:100%;\r\n\theight: 40px;\r\n\tposition: relative;\r\n\tborder-bottom: 1px solid;\r\n\tbox-sizing: border-box;\r\n}\r\n.chat-form__input{\r\n\tposition: absolute;\r\n\tbottom: 0;\r\n\tleft: 0;\r\n\twidth:80%;\r\n\theight:40px;\r\n\tline-height: 40px;\r\n\tpadding: 0px 5px;\r\n\toutline: none;\r\n\tborder: none;\r\n\tborder-top: 1px solid grey;\r\n\tbox-sizing: border-box;\r\n\tfont-size: 24px;\r\n}\r\n.chat-form__submitBtn{\r\n\toutline: none;\r\n\tborder-left: 1px solid grey;\r\n\tborder-top: 1px solid grey;\r\n\tborder:1px solid grey;\r\n\tbackground: white;\r\n\twidth:20%;\r\n\theight: 40px;\r\n\tbox-sizing: border-box;\r\n\tposition: absolute;\r\n\tbottom: 0;\r\n\tright: 0;\r\n}\r\n\r\n\r\n.message{\r\n\tpadding: 2px;\r\n\ttext-align: right;\r\n}\r\n.message--fromMe{\r\n\ttext-align: left;\r\n}\r\n\r\n.message__userName{\r\n\tdisplay: inline-block;\r\n\tpadding: 5px;\r\n\ttext-align: center;\r\n\tfloat: right;\r\n}\r\n\r\n.message--fromMe .message__userName{\r\n\tfloat: left;\r\n}\r\n\r\n.message__message-body{\r\n\tdisplay: inline-block;\r\n\tborder: 1px solid transparent;\r\n\tborder-radius: 5px;\r\n\tpadding: 2px 8px;\r\n\tbackground: #ea8168;\r\n\ttext-align: right;\r\n}\r\n\r\n.message--fromMe .message__message-body{\r\n\tbackground: #82b21e;\r\n\ttext-align: left;\r\n}\r\n", ""]);
 
 // exports
 
@@ -19621,8 +19637,6 @@ var ChatMessages = function (_React$Component) {
 		value: function componentDidUpdate() {
 			if (this.list) {
 				this.list.scrollTop = this.list.scrollHeight;
-			} else {
-				console.log('ChatMessages : no this.list =((');
 			}
 		}
 	}, {
@@ -19753,6 +19767,8 @@ var ChatInput = function (_React$Component) {
 			this.setState({
 				chatInput: e.target.value
 			});
+
+			socket.emit('chatTyping');
 		}
 	}, {
 		key: 'submitHandler',
@@ -19833,8 +19849,6 @@ var Infobar = function (_React$Component) {
 
 		socket.on('endGame', function (props) {
 			var statistic = props.statistic;
-
-			l(statistic);
 
 			_this.setState(function (prevState) {
 				return {

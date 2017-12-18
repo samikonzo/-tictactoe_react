@@ -17,6 +17,8 @@ class ChatInput extends React.Component{
 		this.setState({
 			chatInput: e.target.value
 		})
+
+		socket.emit('chatTyping')
 	}
 
 	submitHandler(e){

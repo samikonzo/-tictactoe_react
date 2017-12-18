@@ -12,7 +12,7 @@ module.exports = function(app, io) {
 			this.rooms[id] = room;
 
 			var link = '/invite_' + id
-			l('localhost:3000' + link)
+			//l('localhost:3000' + link)
 		},
 
 		//remove empty room
@@ -32,13 +32,13 @@ module.exports = function(app, io) {
 		}
 
 		socket.on('connection', url => {
-			l(' ')
-			l('url : ', url, '  socket: ', socket.id)
+			//l(' ')
+			//l('url : ', url, '  socket: ', socket.id)
 
 			var invite_ID = url.match(/invite_(.*)/i)
 
 			if(!invite_ID){
-				l('no invite ID')
+				//l('no invite ID')
 				createRoom(player)
 			} else {
 				invite_ID = invite_ID[1]
@@ -66,10 +66,9 @@ module.exports = function(app, io) {
 			player.room.sendMessage(msg)
 		}) 
 
-		/*socket.on('chatTyping', props => {
-			var sign = props.sign
-			player.room.showTyping(sign, socket)
-		})*/
+		socket.on('chatTyping', props => {
+			player.room.showTyping(socket)
+		})
 	})
 
 	/*
@@ -92,7 +91,7 @@ module.exports = function(app, io) {
 				createRoom(player)
 			}
 		} else {
-			l(' no room, create new')
+			//l(' no room, create new')
 			createRoom(player)
 		}
 	}
@@ -164,7 +163,7 @@ module.exports = function(app, io) {
 		
 		function checkCell(player, cell){
 			if(players[turn] != player.id){
-				l('not this player turn!')
+				//l('not this player turn!')
 				return
 			}
 
@@ -370,7 +369,7 @@ module.exports = function(app, io) {
 		}		
 
 		function sendMessage(msg){
-			l(msg)
+			//l(msg)
 			msg.time = getCurrentTime()
 			io.to(that.id).emit('chatMessage', msg)
 		}
@@ -378,12 +377,10 @@ module.exports = function(app, io) {
 		function showTyping(sign, socket){
 			if(socket == socketX){
 				socketO.emit('chatTyping', {
-					sign: sign,
 					show: true
 				})
 			} else {
 				socketX.emit('chatTyping', {
-					sign: sign,
 					show: true
 				})
 			}

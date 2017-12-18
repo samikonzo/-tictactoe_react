@@ -14,8 +14,6 @@ class Infobar extends React.Component{
 		socket.on('endGame', props => {
 			var statistic = props.statistic
 
-			l(statistic)
-
 			this.setState(prevState => {
 				return {
 					winsX: statistic['X'],
