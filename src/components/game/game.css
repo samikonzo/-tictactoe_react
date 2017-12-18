@@ -1,0 +1,103 @@
+.game{
+	position: relative;
+}
+.game--visible{}
+
+.playground{
+	height: 300px;
+	border-collapse: collapse; 
+	cursor: pointer;
+	background: rgba(255, 255, 255, 1);
+	transition: .5s;
+}
+.playground--disable{
+	background: rgba(100, 100, 100, 0.7); 
+	cursor: default;
+}
+
+.playground__cell{
+	width: 100px;
+	height: 100px;
+	text-align: center;
+	font-size: 40px;
+	border: 1px solid;
+	box-sizing: border-box;
+	opacity: 1;
+	transition: 1s;
+}
+
+.playground__cell--empty{
+	opacity: 0
+}
+
+.playground__cell--bigRed{
+	font-size: 80px;
+	color: red;
+	animation: shake .5s ease-in-out 0s infinite alternate;
+}
+
+.playground__cell--bigRed-1{
+	animation-delay: .2s
+}
+.playground__cell--bigRed-2{
+	animation-delay: .4s
+}
+
+@keyframes shake{
+	from{
+		transform: rotate(0deg);
+	}
+
+	50%{
+		transform: rotate(-30deg);
+	}
+
+	to{
+		transform: rotate(30deg);
+	}
+}
+
+
+.playground__popup{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: 1s;
+	background: white;
+	border:1px dashed red;
+	z-index: 0;
+
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	-ms-align-items: center;
+	align-items: center;
+}
+.playground__popup--visible{
+	opacity: 1;
+	z-index: 1;
+}
+.playground__popup--win{
+	background: #82b21e;
+}
+.playground__popup--fail{
+	background: #ea8168;
+}
+.playground__popup--draw{
+	background: #f8e2c3;
+}
+
+.playground__restartBtn{
+	opacity: 0;
+	width:100px;
+	height: 40px;
+	cursor:pointer;
+	margin: 0 auto;
+	border: 1px dashed #603935;
+	outline: none;
+	transition: 1s .5s;
+}
+.playground__restartBtn--visible{
+	opacity: 1;
+}
